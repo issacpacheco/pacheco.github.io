@@ -1,0 +1,22 @@
+---
+import Card from '../components/card.astro';
+import HelloComponent from '../components/HelloComponent.jsx';
+---
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="{Astro.generator}">
+    <title>ASTRO ABOUT</title>
+</head>
+<body>
+    <h1>About</h1>
+    <Card title="Esto es un titulo" text="Esto es un texto" />
+    <Card title="Esto es un titulo 2" text="Esto es un texto 2" />
+    <Card title="Esto es un titulo 3" text="Esto es un texto 3" />
+    <HelloComponent client:load />
+</body>
+</html>

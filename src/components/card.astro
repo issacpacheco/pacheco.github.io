@@ -1,0 +1,30 @@
+---
+// El error está en la sintaxis para acceder a las props en Astro.
+// Debe ser Astro.props.title y Astro.props.text, o bien directamente definir 'export interface Props', etc.
+// Opcionalmente, puedes tipar las props o recibirlas como Props.
+const { title, text } = Astro.props;
+---
+<div class="card">
+    <h1 class="card-title">{title}</h1>
+    <p class="card-text">{text}</p>
+</div>
+
+<style is:global>
+    .card {
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        background-color: #f0f0f0;
+    }
+    .card-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+    }
+    .card-text {
+        font-size: 16px;
+        color: #666;
+    }
+</style>
