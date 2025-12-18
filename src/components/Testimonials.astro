@@ -1,0 +1,96 @@
+---
+const testimonials = [
+    {
+        name: "INVERCO",
+        role: "Cliente Corporativo",
+        content:
+            "Desde el inicio del proyecto, demostró un alto nivel de profesionalismo, compromiso y una comprensión precisa de nuestras necesidades. La plataforma personalizada superó nuestras expectativas.",
+        avatar: "https://placehold.co/100x100/1e293b/8b5cf6?text=INVERCO",
+    },
+    {
+        name: "Aída Avilés",
+        role: "Lic. en Diseño Gráfico",
+        content:
+            "Trabajar con Issac Pacheco fue excelente. Su profesionalismo y capacidad para cumplir con los plazos superaron mis expectativas. El resultado final fue exactamente lo que necesitaba.",
+        avatar: "https://placehold.co/100x100/1e293b/ec4899?text=AA",
+    },
+];
+---
+
+<section id="testimonials" class="testimonials-section">
+    <div class="container">
+        <h2 class="section-title">Lo que dicen mis clientes</h2>
+        <div class="testimonials-grid">
+            {
+                testimonials.map((item) => (
+                    <div class="testimonial-card">
+                        <div class="quote-icon">“</div>
+                        <p class="content">{item.content}</p>
+                        <div class="author">
+                            <img src={item.avatar} alt={item.name} />
+                            <div class="author-info">
+                                <h4>{item.name}</h4>
+                                <span>{item.role}</span>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .testimonial-card {
+        background-color: var(--color-surface);
+        padding: 2rem;
+        border-radius: 12px;
+        position: relative;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .quote-icon {
+        font-size: 4rem;
+        color: var(--color-primary);
+        opacity: 0.3;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        font-family: serif;
+    }
+
+    .content {
+        font-style: italic;
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .author img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    .author-info h4 {
+        font-size: 1rem;
+        margin-bottom: 0.1rem;
+    }
+
+    .author-info span {
+        font-size: 0.875rem;
+        color: #94a3b8;
+    }
+</style>

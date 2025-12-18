@@ -1,0 +1,65 @@
+---
+
+---
+
+<!-- Header -->
+<header class="header">
+    <div class="container header-content">
+        <a href="#" class="logo">Isaac Pacheco</a>
+        <nav class="nav">
+            <a href="#about">Sobre mí</a>
+            <a href="#skills">Habilidades</a>
+            <a href="#experience">Experiencia</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#testimonials">Testimoniales</a>
+            <a href="#contact">Contacto</a>
+        </nav>
+    </div>
+</header>
+
+<style>
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+    }
+
+    .logo {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-primary);
+    }
+
+    .nav {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav a {
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    .nav a:hover {
+        color: var(--color-primary);
+    }
+
+    @media (max-width: 768px) {
+        .nav {
+            display: none; /* Mobile menu implementation could be added here */
+        }
+    }
+</style>

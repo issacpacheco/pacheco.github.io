@@ -1,5 +1,5 @@
 {
-  "name": "my-first-project-astro",
+  "name": "mi-portafolio",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -14,6 +14,8 @@
     "@types/react-dom": "^19.2.3",
     "astro": "^5.16.5",
     "react": "^19.2.1",
-    "react-dom": "^19.2.1"
+    "react-dom": "^19.2.1",
+    "react-icons": "^5.5.0",
+    "typed.js": "^2.1.0"
   }
 }

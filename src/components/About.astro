@@ -1,0 +1,208 @@
+---
+
+---
+
+<section id="about" class="about-section">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Sobre <span>Mí</span></h2>
+
+        <div class="about-content">
+            <div class="about-image animate-on-scroll">
+                <div class="image-wrapper">
+                    <img
+                        src="/img/About/perfil.jpg"
+                        alt="Issac Pacheco"
+                        loading="lazy"
+                    />
+                </div>
+            </div>
+
+            <div class="about-text animate-on-scroll">
+                <h3>Desarrollador & Entusiasta de la IA</h3>
+                <p>
+                    Profesional con más de 5 años de experiencia en fibra
+                    óptica, desarrollo web y backend. Me enfoco en optimizar
+                    procesos y crear soluciones escalables. Apasionado por el
+                    aprendizaje continuo y el trabajo en equipo.
+                </p>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Años Exp.</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Proyectos</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Clientes</span>
+                    </div>
+                </div>
+
+                <a
+                    href="/doc/CV_ISAAC_PACHECO.pdf"
+                    class="btn btn-primary"
+                    download
+                >
+                    Descargar CV
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                        ></path><polyline points="7 10 12 15 17 10"
+                        ></polyline><line x1="12" y1="15" x2="12" y2="3"
+                        ></line></svg
+                    >
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .about-section {
+        background-color: var(--color-bg);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        align-items: center;
+        margin-top: 3rem;
+    }
+
+    @media (min-width: 968px) {
+        .about-content {
+            grid-template-columns: 1fr 1.2fr;
+        }
+    }
+
+    .about-image {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    .image-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 2px solid rgba(139, 92, 246, 0.3);
+        box-shadow: 0 0 40px rgba(139, 92, 246, 0.1);
+        aspect-ratio: 3/4;
+    }
+
+    .image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .image-wrapper:hover img {
+        transform: scale(1.05);
+    }
+
+    .about-text h3 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: var(--color-primary);
+    }
+
+    .about-text p {
+        font-size: 1.1rem;
+        color: #94a3b8;
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .stat-card {
+        background: var(--color-surface);
+        padding: 1.5rem 1rem;
+        border-radius: 1rem;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: transform 0.3s ease;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--color-primary);
+    }
+
+    .stat-number {
+        display: block;
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--color-secondary);
+        margin-bottom: 0.5rem;
+        font-family: var(--font-heading);
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        color: #94a3b8;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    /* Animation classes */
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+
+<script>
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+        observer.observe(el);
+    });
+</script>

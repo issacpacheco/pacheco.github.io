@@ -1,0 +1,114 @@
+---
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
+
+const year = new Date().getFullYear();
+const contact = "isaacpacheco.go@gmail.com";
+const socialLinks = [
+    {
+        name: "GitHub",
+        url: "https://github.com/issacpacheco",
+        icon: FaGithub,
+    },
+    {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/issac-pacheco-perez",
+        icon: FaLinkedin,
+    },
+    {
+        name: "Email",
+        url: `mailto:${contact}`,
+        icon: SiGmail,
+    },
+];
+---
+
+<footer class="footer">
+    <div class="container footer-content">
+        <p>&copy; {year} Isaac Pacheco. Todos los derechos reservados.</p>
+        <div class="socials">
+            {
+                socialLinks.map((link) => (
+                    <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={link.name}
+                    >
+                        <link.icon size="1.5rem" />
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        padding: 3rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: var(--color-bg);
+        margin-top: 5rem;
+        font-size: 0.9rem;
+        color: #94a3b8;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .socials {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .socials a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+        transition:
+            transform 0.2s,
+            color 0.3s;
+    }
+
+    .socials :global(svg) {
+        width: 1.5rem;
+        height: 1.5rem;
+        transition:
+            color 0.3s,
+            transform 0.2s;
+        opacity: 0.8;
+    }
+
+    .socials a:hover :global(svg) {
+        opacity: 1;
+        transform: scale(1.1);
+        color: var(--color-primary);
+    }
+
+    .socials a[href^="mailto"]:hover {
+        color: var(--color-primary);
+    }
+
+    .socials a[href^="mailto"] {
+        font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+        .footer-content {
+            flex-direction: column;
+            text-align: center;
+            gap: 1rem;
+        }
+
+        .footer {
+            padding: 2rem 0;
+        }
+    }
+</style>
